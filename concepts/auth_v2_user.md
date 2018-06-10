@@ -219,6 +219,25 @@ A successful token response will look similar to the following.
 | scope |The permissions (scopes) that the access_token is valid for. |
 | refresh_token |A new OAuth 2.0 refresh token. You should replace the old refresh token with this newly acquired refresh token to ensure your refresh tokens remain valid for as long as possible. |
 
+## FAQ
+
+### 1. Getting Auth User profile URL
+
+The following request gets the profile image of the signed-in user assuming the User.Read scope was applied during the OAuth flow app permissions.
+
+https://graph.microsoft.com/v1.0/users/{id | userPrincipalName}/photo/$value
+
+So, for example, you have user's email address ( userPrincipalName) as ChrisG@contoso.onmicrosoft.com, then your url will be:
+
+
+```
+GET https://graph.microsoft.com/v1.0/users/ChrisG@contoso.onmicrosoft.com/photo/$value 
+Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
+Host: graph.microsoft.com
+
+```
+
+
 ## Supported app scenarios and additional resources
 You can call Microsoft Graph on behalf of a user from the following kinds of apps: 
 
