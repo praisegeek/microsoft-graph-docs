@@ -224,7 +224,7 @@ A successful token response will look similar to the following.
 
 ##### 1. Getting the authenticated user profile url
 
-The following request gets the profile image of the signed-in user assuming the User.Read scope was applied during the OAuth flow app permissions.
+The following request gets the profile image of the signed-in user, assuming the User.Read permission was applied during the OAuth flow app permissions.
 
 https://graph.microsoft.com/v1.0/me/photo/$value
 
@@ -243,7 +243,7 @@ The following request gets the profile image of a user assuming the User.Read sc
 
 https://graph.microsoft.com/v1.0/users/{id | userPrincipalName}/photo/$value
 
-So, for example, you have user's email address ( userPrincipalName) as ChrisG@contoso.onmicrosoft.com, then your url will be:
+For example, for the user email address (userPrincipalName) ChrisG@contoso.onmicrosoft.com, your URL will be the following.
 
 ```
 GET https://graph.microsoft.com/v1.0/users/ChrisG@contoso.onmicrosoft.com/photo/$value 
