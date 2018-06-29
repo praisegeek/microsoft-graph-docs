@@ -220,11 +220,11 @@ A successful token response will look similar to the following.
 | refresh_token |A new OAuth 2.0 refresh token. You should replace the old refresh token with this newly acquired refresh token to ensure your refresh tokens remain valid for as long as possible. |
 
 
-## Some common use cases
+## Common use cases
 
-##### 1. Getting the authenticated user profile url
+### Getting the authenticated user profile URL
 
-The following request gets the profile image of the signed-in user, assuming the User.Read permission was applied during the OAuth flow app permissions.
+The following request gets the profile image of the signed-in user assuming the User.Read scope was applied during the OAuth flow app permissions.
 
 https://graph.microsoft.com/v1.0/me/photo/$value
 
@@ -237,13 +237,13 @@ Host: graph.microsoft.com
 
 ```
 
-##### 2. Getting other users profile url
+### Get another user's profile URL
 
-The following request gets the profile image of a user assuming the User.Read scope was applied during the OAuth flow app permissions.
+The following request gets the profile image of a user, assuming the User.Read permission was applied during the OAuth flow app permissions.
 
 https://graph.microsoft.com/v1.0/users/{id | userPrincipalName}/photo/$value
 
-For example, for the user email address (userPrincipalName) ChrisG@contoso.onmicrosoft.com, your URL will be the following.
+For example, for the email address (userPrincipalName) ChrisG@contoso.onmicrosoft.com, the URL will be the following.
 
 ```
 GET https://graph.microsoft.com/v1.0/users/ChrisG@contoso.onmicrosoft.com/photo/$value 
@@ -252,9 +252,9 @@ Host: graph.microsoft.com
 
 ```
 
-##### 3. Displaying authenticated profile url as image on your frontend
+### Display the authenticated profile URL as an image
 
-The examples below uses a generic flow that can be applied to any language and framework using any HTTP client to fetch the user resource to a view on your frontend.
+The folloiwng examples show a generic flow that you can apply to any language and framework, using any HTTP client to fetch the user resource to a view on your front end.
 
 ---using PHP + Guzzle HTTP Client
 ```php
@@ -270,7 +270,7 @@ The examples below uses a generic flow that can be applied to any language and f
     $photo = base64_encode($body);
 
     # Front-end view
-    <img src="data:image/jpg;base64, {{ $photo }}" />
+    <img src="data:image/jpg;base64, {{ $photo }}" alt="Avatar" />
 ```
 [Guzzle HTTP Client](https://github.com/guzzle/guzzle)
 
