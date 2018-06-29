@@ -224,11 +224,11 @@ A successful token response will look similar to the following.
 
 ### Getting the authenticated user profile URL
 
-The following request gets the profile image of the signed-in user assuming the User.Read scope was applied during the OAuth flow app permissions.
+The following request gets the profile image of the signed-in user assuming the User.Read permission was applied during the OAuth flow app permissions.
 
 https://graph.microsoft.com/v1.0/me/photo/$value
 
-So, for example, you have user's email address ( userPrincipalName) as ChrisG@contoso.onmicrosoft.com, then your url will be:
+Tip: The `/me` endpoint provides quick access to all resources related to the authenticated user.
 
 ```
 GET https://graph.microsoft.com/v1.0/me/photo/$value 
@@ -254,7 +254,7 @@ Host: graph.microsoft.com
 
 ### Display the authenticated profile URL as an image
 
-The folloiwng examples show a generic flow that you can apply to any language and framework, using any HTTP client to fetch the user resource to a view on your front end.
+The following example shows a generic flow that you can apply to any language and framework, using any HTTP client to fetch the user resource to a view on your front end.
 
 ---using PHP + Guzzle HTTP Client
 ```php
